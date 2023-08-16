@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Anda',
-  tagline: 'Dinosaurs are cool',
+  title: '安大',
+  tagline: '安得广厦千万间，大庇天下寒士俱欢颜',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -45,13 +45,20 @@ const config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
+          routeBasePase:"/",
+          path:"./blog",
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        theme: {
+        pages: {
+          path: "src/pages",
+          // 指定 pages 的路由路径，因为 blog 作为主页了
+          routeBasePath: "/pages",
+        }
+          theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
       }),
@@ -64,7 +71,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Anda',
+        title: 'My Site',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -127,7 +134,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Henri. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
